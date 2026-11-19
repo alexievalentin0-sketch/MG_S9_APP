@@ -10,7 +10,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 header{background:linear-gradient(130deg,#f8fbfd,#e5eff6);color:var(--blue);padding:14px 17px 20px;text-align:center;border-bottom:1px solid var(--line)}
 header h1{font-size:23px;margin:4px 0 5px;color:var(--blue)}header p{margin:0;color:#48657b;font-size:14px}
-.car-art{display:block;width:min(100%,440px);height:auto;margin:0 auto 2px}.brandline{font-size:13px;letter-spacing:2px;color:#47718e;font-weight:750}
+.car-art{display:block;width:min(100%,520px);height:auto;max-height:250px;object-fit:contain;margin:0 auto 2px;border-radius:14px}.brandline{font-size:13px;letter-spacing:2px;color:#47718e;font-weight:750}
 main{max-width:760px;margin:auto;padding:14px 13px 40px}
 .card{background:var(--card);border-radius:16px;padding:16px;margin:0 0 14px;box-shadow:0 3px 14px #17364b0d}
 h2{font-size:18px;margin:0 0 13px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
@@ -33,17 +33,22 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 </head>
 <body>
 <header>
-<svg class="car-art" viewBox="0 0 520 210" role="img" aria-label="Desen cu SUV argintiu MG S9">
-<defs><linearGradient id="silver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f9fbfc"/><stop offset=".48" stop-color="#aebbc5"/><stop offset="1" stop-color="#657783"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#59758a"/><stop offset="1" stop-color="#1d3547"/></linearGradient></defs>
-<ellipse cx="263" cy="178" rx="204" ry="12" fill="#78909f" opacity=".22"/>
-<path d="M67 139 91 111q12-13 47-20l42-37q14-12 44-12l112 3q24 2 43 25l51 31q23 9 31 30l-8 26-35 9H104l-34-9z" fill="url(#silver)" stroke="#71818c" stroke-width="2"/>
-<path d="M187 57q11-8 35-8l38 1v41H151zM270 50l63 3q17 3 33 24l15 17H270z" fill="url(#glass)" stroke="#dce4e9" stroke-width="3"/>
-<path d="M263 49v111M385 99l4 60M145 99v59" stroke="#778792" stroke-width="2"/><path d="M170 112h35m88 0h36" stroke="#52616c" stroke-width="3" stroke-linecap="round"/>
-<path d="M77 139q50-10 94-4h254q23 1 33 8l-7 14-35 9H105l-35-9z" fill="url(#silver)" stroke="#71818c" stroke-width="2"/>
-<path d="M78 137l40-8 10 15-47 6zM424 124l25 11 4 10-28-1z" fill="#f7fbff" stroke="#aab7c1" stroke-width="2"/>
-<circle cx="158" cy="159" r="29" fill="#1c2932"/><circle cx="158" cy="159" r="18" fill="#b9c4cc"/><circle cx="158" cy="159" r="8" fill="#657783"/><circle cx="377" cy="159" r="29" fill="#1c2932"/><circle cx="377" cy="159" r="18" fill="#b9c4cc"/><circle cx="377" cy="159" r="8" fill="#657783"/>
-</svg><div class="brandline">MG MOTOR</div><h1>MG S9 LUXURY PLUG-IN HYBRID</h1><p>Monitorizare consum, kilometraj și costuri</p></header>
+<img class="car-art" src="https://ireland.apollo.olxcdn.com/v1/files/m1re2ifnsj1v1-OTOMOTOPL/image%3Bs%3D644x461" alt="MG S9 argintiu, fotografie reală, vedere din față și lateral" loading="eager" referrerpolicy="no-referrer" onerror="this.onerror=null;this.alt='Fotografia MG S9 nu s-a putut încărca. Verifică conexiunea la internet.';this.style.minHeight='120px';this.style.objectFit='contain';"><div class="brandline">MG MOTOR</div><h1>MG S9 LUXURY PLUG-IN HYBRID</h1><p>Monitorizare consum, kilometraj și costuri</p></header>
 <main>
+
+<section class="card" id="profmAutoCard">
+  <h2>📻 PRO FM – pornire automată</h2>
+  <p class="note">Playerul PRO FM este încărcat automat la deschiderea aplicației. Dacă Android/Chrome blochează redarea automată cu sunet, este o restricție a browserului.</p>
+  <iframe id="profmAutoPlayer"
+    src="https://www.radioguide.fm/embed/romania/profm?autoplay=1"
+    title="PRO FM Live"
+    width="100%" height="110"
+    style="border:0;border-radius:12px;background:#101820"
+    allow="autoplay; encrypted-media"
+    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  <p class="note"><a href="https://www.profm.ro/" target="_blank" rel="noopener">Site-ul oficial PRO FM</a></p>
+</section>
+
 <section class="card">
 <h2>Adaugă consumul unei zile</h2>
 <div class="grid">
@@ -122,6 +127,24 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 <div class="actions"><button class="secondary" id="export">Descarcă backup</button><button class="secondary" id="csv">Exportă curent CSV</button><button class="secondary" id="fuelCsv">Exportă combustibil CSV</button><button class="secondary" id="importBackup">Importă backup</button><input id="backupFile" type="file" accept="application/json,.json" hidden><button id="pdf">Raport lunar PDF</button></div>
 <p class="note">Datele sunt păstrate pe telefon, în acest browser. Pentru a nu le pierde când schimbi telefonul sau ștergi datele browserului, descarcă periodic backupul și păstrează-l.</p>
 </section>
+
+<section class="card" id="maintenanceCard">
+<h2>🛠️ Întreținere și documente</h2>
+<p class="note">Înregistrează RCA, rovinietă, ITP, revizii, lucrări de întreținere și daune/accidente. Alertele pentru documente se calculează automat după data expirării.</p>
+<div class="grid">
+<div><label for="maintType">Categorie</label><select id="maintType"><option>Asigurare RCA</option><option>Rovinietă</option><option>ITP</option><option>Revizie</option><option>Întreținere</option><option>Daune / Accident</option><option>Altele</option></select></div>
+<div><label for="maintDate">Data</label><input id="maintDate" type="date"></div>
+<div><label for="maintExpiry">Data expirării (dacă este cazul)</label><input id="maintExpiry" type="date"></div>
+<div><label for="maintKm">Kilometraj (km)</label><input id="maintKm" type="number" min="0" step="1" placeholder="Ex.: 25000"></div>
+<div><label for="maintCost">Cost (lei)</label><input id="maintCost" type="number" min="0" step="0.01" placeholder="Ex.: 850"></div>
+<div><label for="maintProvider">Service / asigurător / furnizor</label><input id="maintProvider" type="text" maxlength="100" placeholder="Nume (opțional)"></div>
+<div style="grid-column:1/-1"><label for="maintDetails">Descriere / lucrare / detalii daună</label><input id="maintDetails" type="text" maxlength="180" placeholder="Ex.: schimb ulei și filtre, accident... "></div>
+<div style="grid-column:1/-1"><label for="maintNotes">Observații</label><input id="maintNotes" type="text" maxlength="240" placeholder="Note suplimentare"></div>
+</div>
+<div class="actions"><button id="saveMaint">Salvează înregistrarea</button><button class="secondary" id="clearMaint">Golește</button></div>
+</section>
+<section class="card"><h2>📋 Documente, întreținere și istoric</h2><div id="maintSummary" class="stats"></div><div id="maintRecords" style="margin-top:12px"></div></section>
+
 <section class="card report-only" id="pdfReport"><h1>MG S9 LUXURY PLUG-IN HYBRID</h1><h2 id="pdfHeading">Raport lunar</h2><div id="pdfContent"></div><p class="note">Raport generat din înregistrările salvate în aplicație.</p></section>
 </main>
 <div id="toast"></div>
@@ -132,12 +155,15 @@ const $=id=>document.getElementById(id);
 let data={};
 try{data=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){data={}}
 const FKEY='combustibil_zilnic_v1';
+const MKEY='mg_s9_intretinere_documente_v1';
+let maintenance=[];try{maintenance=JSON.parse(localStorage.getItem(MKEY)||'[]')}catch(e){maintenance=[]}
+if(!Array.isArray(maintenance))maintenance=[];
 let fuelData={};
 try{fuelData=JSON.parse(localStorage.getItem(FKEY)||'{}')}catch(e){fuelData={}}
 const today=new Date(), pad=n=>String(n).padStart(2,'0');
 const PERIOD_START='2026-11-17', PERIOD_END='2027-11-30';
 const dateStr=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
-$('date').min=PERIOD_START;$('date').max=PERIOD_END;
+$('maintDate').value=dateStr(today);$('date').min=PERIOD_START;$('date').max=PERIOD_END;
 $('fuelDate').min=PERIOD_START;$('fuelDate').max=PERIOD_END;
 const initialDate=dateStr(today)<PERIOD_START?PERIOD_START:(dateStr(today)>PERIOD_END?PERIOD_END:dateStr(today));
 $('date').value=initialDate;$('month').value=initialDate.slice(0,7);$('fuelDate').value=initialDate;
@@ -211,9 +237,9 @@ function render(){
 }
 $('save').addEventListener('click',add);$('clear').addEventListener('click',clearForm);$('month').addEventListener('change',()=>{render();renderFuel()});
 $('records').addEventListener('click',e=>{let del=e.target.dataset.delete;if(del){if(confirm('Ștergi înregistrarea de curent din '+del+'?')){delete data[del];saveData();render();toast('Înregistrarea a fost ștearsă.')}return}let d=e.target.dataset.edit;if(!d)return;let x=data[d];$('date').value=d;$('kwh').value=x.kwh;$('price').value=x.price;$('memo').value=x.memo||'';$('odometerDaily').value=x.odometer??'';window.scrollTo({top:0,behavior:'smooth'});});
-$('export').addEventListener('click',()=>{let blob=new Blob([JSON.stringify({electricity:data,fuel:fuelData},null,2)],{type:'application/json'});download(blob,'backup-consum-energie.json')});
+$('export').addEventListener('click',()=>{let blob=new Blob([JSON.stringify({electricity:data,fuel:fuelData,maintenance:maintenance,version:2},null,2)],{type:'application/json'});download(blob,'backup-mg-s9.json')});
 $('importBackup').addEventListener('click',()=>$('backupFile').click());
-$('backupFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj||typeof obj!=='object'||!obj.electricity||!obj.fuel)throw new Error('format');if(!confirm('Importul va înlocui datele existente în această aplicație. Continui?'))return;data=obj.electricity;fuelData=obj.fuel;saveData();localStorage.setItem(FKEY,JSON.stringify(fuelData));render();renderFuel();toast('Backup importat cu succes.')}catch(err){alert('Fișierul nu este un backup compatibil.')}finally{e.target.value=''}});
+$('backupFile').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj||typeof obj!=='object'||!obj.electricity||!obj.fuel)throw new Error('format');if(!confirm('Importul va înlocui datele existente în această aplicație. Continui?'))return;data=obj.electricity;fuelData=obj.fuel;maintenance=Array.isArray(obj.maintenance)?obj.maintenance:maintenance;saveData();localStorage.setItem(FKEY,JSON.stringify(fuelData));localStorage.setItem(MKEY,JSON.stringify(maintenance));render();renderFuel();renderMaintenance();toast('Backup importat cu succes.')}catch(err){alert('Fișierul nu este un backup compatibil.')}finally{e.target.value=''}});
 $('fuelCsv').addEventListener('click',()=>{let lines=['Data,Combustibil,Litri,Pret_lei_litru,Cost_lei,Kilometraj,Observatii'];Object.keys(fuelData).sort().forEach(d=>{let x=fuelData[d];lines.push([d,x.type,x.liters,x.price,(x.liters*x.price).toFixed(2),x.odometer??'', '"'+(x.memo||'').replaceAll('"','""')+'"'].join(','))});download(new Blob(['\\ufeff'+lines.join('\\n')],{type:'text/csv;charset=utf-8'}),'alimentari-combustibil.csv')});
 $('csv').addEventListener('click',()=>{let lines=['Data,Consum_kWh,Pret_lei_kWh,Cost_lei,Observatii'];Object.keys(data).sort().forEach(d=>{let x=data[d];lines.push([d,x.kwh,x.price,(x.kwh*x.price).toFixed(2),'"'+(x.memo||'').replaceAll('"','""')+'"'].join(','))});download(new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv;charset=utf-8'}),'consum-energie.csv')});
 function download(blob,name){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
@@ -249,6 +275,27 @@ function renderFuel(){
 $('saveFuel').addEventListener('click',saveFuel);$('clearFuel').addEventListener('click',clearFuelForm);
 $('fuelRecords').addEventListener('click',e=>{const del=e.target.dataset.fueldelete;if(del){if(confirm('Ștergi alimentarea din '+del+'?')){delete fuelData[del];localStorage.setItem(FKEY,JSON.stringify(fuelData));renderFuel();render();toast('Alimentarea a fost ștearsă.')}return}const d=e.target.dataset.fueledit;if(!d)return;const x=fuelData[d];$('fuelDate').value=d;$('liters').value=x.liters;$('fuelPrice').value=x.price;$('fuelType').value=x.type||'Benzină';$('odometer').value=x.odometer??'';$('fuelMemo').value=x.memo||'';window.scrollTo({top:0,behavior:'smooth'});});
 
+
+function clearMaintForm(){ $('maintType').value='Asigurare RCA';$('maintDate').value=dateStr(today);$('maintExpiry').value='';$('maintKm').value='';$('maintCost').value='';$('maintProvider').value='';$('maintDetails').value='';$('maintNotes').value='';$('saveMaint').dataset.edit=''; }
+function saveMaint(){
+ const id=$('saveMaint').dataset.edit||String(Date.now()),date=$('maintDate').value||dateStr(today),expiry=$('maintExpiry').value||'',km=$('maintKm').value===''?null:Number($('maintKm').value),cost=$('maintCost').value===''?null:Number($('maintCost').value);
+ if(km!==null&&(!Number.isFinite(km)||km<0)){toast('Kilometraj invalid.');return}
+ if(cost!==null&&(!Number.isFinite(cost)||cost<0)){toast('Cost invalid.');return}
+ maintenance=maintenance.filter(x=>x.id!==id);maintenance.push({id,type:$('maintType').value,date,expiry,km,cost,provider:$('maintProvider').value.trim(),details:$('maintDetails').value.trim(),notes:$('maintNotes').value.trim()});
+ localStorage.setItem(MKEY,JSON.stringify(maintenance));renderMaintenance();clearMaintForm();toast('Înregistrarea a fost salvată.');
+}
+function expiryStatus(exp){if(!exp)return '<span style="color:#647584">Fără expirare</span>';const now=new Date();now.setHours(0,0,0,0);const e=new Date(exp+'T00:00:00');const days=Math.ceil((e-now)/86400000);if(days<0)return `<b style="color:#b33a3a">EXPIRAT (${Math.abs(days)} zile)</b>`;if(days<=30)return `<b style="color:#b36b12">Expiră în ${days} zile</b>`;return `<b style="color:#16794a">Valabil până la ${e.toLocaleDateString('ro-RO')}</b>`}
+function renderMaintenance(){
+ const docs=maintenance.filter(x=>x.expiry),expired=docs.filter(x=>new Date(x.expiry+'T00:00:00')<new Date(new Date().setHours(0,0,0,0))).length,soon=docs.filter(x=>{let d=Math.ceil((new Date(x.expiry+'T00:00:00')-new Date(new Date().setHours(0,0,0,0)))/86400000);return d>=0&&d<=30}).length;
+ $('maintSummary').innerHTML=`<div class="stat"><small>Înregistrări totale</small><strong>${maintenance.length}</strong></div><div class="stat"><small>Documente expirate</small><strong style="color:${expired?'#b33a3a':'inherit'}">${expired}</strong></div><div class="stat"><small>Expiră în 30 zile</small><strong style="color:${soon?'#b36b12':'inherit'}">${soon}</strong></div><div class="stat"><small>Total costuri înregistrate</small><strong>${money(maintenance.reduce((s,x)=>s+(Number(x.cost)||0),0))} lei</strong></div>`;
+ if(!maintenance.length){$('maintRecords').innerHTML='<div class="empty">Nu ai înregistrări de întreținere sau documente încă.</div>';return}
+ const sorted=[...maintenance].sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+ $('maintRecords').innerHTML='<div style="overflow-x:auto"><table><thead><tr><th>Tip / dată</th><th>Expirare / status</th><th>Cost / km</th><th>Detalii</th><th>Acțiuni</th></tr></thead><tbody>'+sorted.map(x=>`<tr><td><b>${escHtml(x.type)}</b><br><small>${x.date||'—'}</small></td><td>${x.expiry?`${x.expiry.split('-').reverse().join('.')}<br>${expiryStatus(x.expiry)}`:'—'}</td><td>${x.cost==null?'—':money(x.cost)+' lei'}<br><small>${x.km==null?'—':num(x.km)+' km'}</small></td><td>${escHtml(x.details||'')}<br><small>${escHtml(x.provider||'')}${x.notes?' · '+escHtml(x.notes):''}</small></td><td><button class="secondary" data-maintedit="${x.id}">Editează</button> <button class="danger" data-maintdelete="${x.id}">Șterge</button></td></tr>`).join('')+'</tbody></table></div>';
+}
+function escHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+$('saveMaint').addEventListener('click',saveMaint);$('clearMaint').addEventListener('click',clearMaintForm);
+$('maintRecords').addEventListener('click',e=>{const del=e.target.dataset.maintdelete;if(del){if(confirm('Ștergi această înregistrare?')){maintenance=maintenance.filter(x=>x.id!==del);localStorage.setItem(MKEY,JSON.stringify(maintenance));renderMaintenance();toast('Înregistrare ștearsă.')}return}const id=e.target.dataset.maintedit;if(!id)return;const x=maintenance.find(a=>a.id===id);if(!x)return;$('maintType').value=x.type;$('maintDate').value=x.date||'';$('maintExpiry').value=x.expiry||'';$('maintKm').value=x.km??'';$('maintCost').value=x.cost??'';$('maintProvider').value=x.provider||'';$('maintDetails').value=x.details||'';$('maintNotes').value=x.notes||'';$('saveMaint').dataset.edit=id;window.scrollTo({top:$('maintenanceCard').offsetTop-10,behavior:'smooth'});});
+
 $('pdf').addEventListener('click',()=>{
  const m=$('month').value||dateStr(today).slice(0,7), e=monthEntries(m), f=fuelMonthEntries(m);
  const electricKwh=e.reduce((a,x)=>a+x.kwh,0), electricCost=e.reduce((a,x)=>a+x.kwh*x.price,0), liters=f.reduce((a,x)=>a+x.liters,0), fuelCost=f.reduce((a,x)=>a+x.liters*x.price,0);
@@ -259,7 +306,24 @@ $('pdf').addEventListener('click',()=>{
  window.print();
 });
 // Nu șterge automat înregistrările: istoricul rămâne salvat local.
-saveData();render();renderFuel();
+saveData();render();renderFuel();renderMaintenance();
 })();
 </script>
+
+<script>
+(function () {
+  function startProFMAutomatically() {
+    var player = document.getElementById('profmAutoPlayer');
+    if (!player) return;
+    var base = 'https://www.radioguide.fm/embed/romania/profm';
+    player.src = base + '?autoplay=1&mute=0';
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startProFMAutomatically, { once: true });
+  } else {
+    startProFMAutomatically();
+  }
+})();
+</script>
+
 </body></html>
